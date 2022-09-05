@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>InvoChat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div
+      class="p-3 flex content-center items-center align-middle"
+      id="work-space"
+      style="background-color: #01264b; color: white"
+    >
+      <div class="pr-2 font-bold cursor-pointer">Edit Workspace</div>
+      <span style="font-size: 1.2em; color: white">
+        <i class="fa-solid fa-edit cursor-pointer"></i>
+      </span>
+    </div>
+
+    <div class="modal move-middle"></div>
+
+    <div class="text-center text-slate-500 font-bold text-md fa-3x move-middle">
+      <i class="fa-solid fa-sync fa-spin"></i>
+      <div>Loading Please wait!</div>
+    </div>
+
+    <script>
+      let btn = document.querySelector("#work-space");
+      btn.addEventListener("click", () => {
+        window.electronAPI.toggleSwitch();
+      });
+    </script>
+  </body>
+</html>
